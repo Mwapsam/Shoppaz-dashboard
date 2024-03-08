@@ -33,8 +33,8 @@ export function SignIn() {
       if (status === 'success' && data) {
 
         const receivedTokens = {
-          accessToken: data?.data?.access,
-          refreshToken: data?.data?.refresh,
+          accessToken: data?.data?.data?.access,
+          refreshToken: data?.data?.data?.refresh,
         };
 
         if (receivedTokens.accessToken && receivedTokens.refreshToken) {
@@ -47,7 +47,6 @@ export function SignIn() {
     tokensCallBack();
   }, [status]);
 
-  console.log(data?.data?.access);
 
   return (
     <section className="m-8 flex gap-4">
